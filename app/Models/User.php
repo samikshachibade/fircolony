@@ -62,4 +62,14 @@ public function firs(){
     return $this->hasMany(Fir::class);
 }
 
+public function scopeSearch($query, $term)
+{
+    if ($term) {
+        return $query->where('name', 'like', '%' . $term . '%')
+                     ->orWhere('email', 'like', '%' . $term . '%');
+    }
+
+    return $query;
+}
+
 }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('mobile_number');
             $table->string('city');
             $table->string('state');
+            $table->string('admin')->default(false);
             //
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Fir;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -13,7 +14,11 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $firs = $user->firs;
-
-        return view('frontend.profile', compact('user', 'firs'));
+        $firData = Fir::class;
+        if ($user && $user->admin == true) {
+            return view('backend.dashboard', compact('user', 'firs'));
+        } else {
+            return view('frontend.profile', compact('user', 'firs'));
+        };
     }
 }
