@@ -2,21 +2,21 @@
     <table class="w-full text-sm text-left text-gray-500 ">
         <thead class="text-xs text-gray-700 uppercase bg-gray-200">
             <tr>
-                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('name')">Name
+                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('name')">@lang('user_table.headers.name')
                     <x-icon-sort sortField="{{ $sortField }}" field="name" sortAsc="{{ $sortAsc }}" />
                 </th>
-                <th scope="col" class="py-3 px-6">Email</th>
+                <th scope="col" class="py-3 px-6">@lang('user_table.headers.email')</th>
                 <!-- Other fields as necessary -->
-                <th scope="col" class="py-3 px-6">Mobile Number</th>
-                <th scope="col" class="py-3 px-6">AadhaarCard Number</th>
-                <th scope="col" class="py-3 px-6">Pancard Number</th>
-                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('state')">State
+                <th scope="col" class="py-3 px-6">@lang('user_table.headers.mobile_number')</th>
+                <th scope="col" class="py-3 px-6">@lang('user_table.headers.aadhaar_number')</th>
+                <th scope="col" class="py-3 px-6">@lang('user_table.headers.pancard_number')</th>
+                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('state')">@lang('user_table.headers.state')
                     <x-icon-sort sortField="{{ $sortField }}" field="state" sortAsc="{{ $sortAsc }}" />
                 </th>
-                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('city')">City
+                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('city')">@lang('user_table.headers.city')
                     <x-icon-sort sortField="{{ $sortField }}" field="city" sortAsc="{{ $sortAsc }}" />
                 </th>
-                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('created_at')">Registered Date
+                <th scope="col" class="py-3 px-6 cursor-pointer" wire:click="sortBy('created_at')">@lang('user_table.headers.registered_date')
                     <x-icon-sort sortField="{{ $sortField }}" field="created_at" sortAsc="{{ $sortAsc }}" />
                 </th>
                 <!-- Add more columns as needed -->

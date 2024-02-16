@@ -31,7 +31,7 @@
 
     <x-frontend.navbar />
 
-    <div class="">
+    <div class="container mx-auto my-10 bg-gray-100">
         <main>
             @yield('frontend')
         </main>

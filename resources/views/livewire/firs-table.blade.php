@@ -2,17 +2,17 @@
     <table class="w-full text-sm text-left text-gray-500 ">
         <thead class="text-xs text-gray-700 uppercase bg-gray-200  ">
             <tr>
-                <th scope="col" class="py-3 px-6">Complainant Name</th>
-                <th scope="col" class="py-3 px-6">Identity Proof</th>
-                <th scope="col" class="py-3 px-6">Contact Number</th>
-                <th scope="col" class="py-3 px-6">Incident Date</th>
-                <th scope="col" class="py-3 px-6">Accused Name</th>
-                <th scope="col" class="py-3 px-6">Incident Location</th>
-                <th scope="col" class="py-3 px-6">Incident Description</th>
-                <th scope="col" class="py-3 px-6">Amount</th>
-                <th scope="col" class="py-3 px-6">Receipt</th>
-                <th scope="col" class="py-3 px-6">Status</th>
-                <th scope="col" class="py-3 px-6">Action</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.complainant_name')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.identity_proof')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.contact_number')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.incident_date')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.accused_name')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.incident_location')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.incident_description')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.amount')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.receipt')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.status')</th>
+                <th scope="col" class="py-3 px-6">@lang('fir_table.action')</th>
             </tr>
         </thead>
         <tbody>
@@ -35,13 +35,14 @@
                         <select wire:change="updateFirStatus({{ $fir->id }}, $event.target.value)"
                             class="block w-full text-sm text-gray-900 bg-blue-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
                             <option value="informing" {{ $fir->current_status == 'informing' ? 'selected' : '' }}>
-                                Informing</option>
-                            <option value="registered" {{ $fir->current_status == 'registered' ? 'selected' : '' }}>FIR
-                                Registered</option>
-                            <option value="failed" {{ $fir->current_status == 'failed' ? 'selected' : '' }}>Failed
+                                @lang('fir_table.informing')</option>
+                            <option value="registered" {{ $fir->current_status == 'registered' ? 'selected' : '' }}>
+                                @lang('fir_table.registered')</option>
+                            <option value="failed" {{ $fir->current_status == 'failed' ? 'selected' : '' }}>
+                                @lang('fir_table.failed')
                             </option>
                             <option value="attended" {{ $fir->current_status == 'attended' ? 'selected' : '' }}>
-                                Attended Police Station</option>
+                                @lang('fir_table.attended')</option>
                         </select>
                     </td>
                 </tr>

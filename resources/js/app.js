@@ -57,11 +57,11 @@ document.addEventListener("initiatePayment", function (e) {
     initiateRazorpayPayment({ orderID, prefill, apiKey });
 });
 
-document.addEventListener('showPopup', () => {
-        const popup = document.getElementById('popupMessage');
-        popup.style.display = 'flex';
+document.addEventListener("showPopup", () => {
+    const popup = document.getElementById("popupMessage");
+    popup.style.display = "flex";
 
-        setTimeout(() => {
-            popup.style.display = 'none';
-        }, 3000);
-    });
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 3000);
+});

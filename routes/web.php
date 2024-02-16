@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FirController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LawsController;
+use App\Http\Controllers\PoliceStationController;
+use App\Http\Controllers\LocalizationController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,3 +48,11 @@ Route::get('/dashboard', function() {
         return redirect('/');
     }
 });
+
+Route::get('/find-new-laws', [LawsController::class, 'index'])->name('find.new.laws');
+
+Route::get('/search', [FirController::class, 'searchByReceipt'])->name('search.receipt');
+
+Route::get('/find-police-station',[PoliceStationController::class,'index'])->name('find-police-station');
+
+Route::get('/change-language/{locale}', [LocalizationController::class,'changeLanguage'])->name('changeLanguage');

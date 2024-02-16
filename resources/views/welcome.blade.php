@@ -10,23 +10,23 @@
                 <!-- News & Press Releases Column -->
                 <div class="w-full lg:w-1/3 px-2">
                     <div class="bg-gray-100 p-4 border">
-                        <h2 class="font-bold text-lg mb-2 bg-gray-200 p-4">News & Press Releases</h2>
+                        <h2 class="font-bold text-lg mb-2 bg-gray-200 p-4">@lang('homepage.news_press_releases_title')</h2>
                         <ul class="space-y-1 text-xs md:text-sm flex flex-col gap-2">
                             <!-- List items -->
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">Railway Protection Force is set to host the 67th All India...</a>
+                                <a href="#">@lang('homepage.news_item_1')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">DPIIT holds consultation with representatives of Indian Cement...</a>
+                                <a href="#">@lang('homepage.news_item_2')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">Capacity Building Maldivian Civil Servants: The NCGG achieves...</a>
+                                <a href="#">@lang('homepage.news_item_3')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">Text of PM’s address at ET Now Global Business Summit 2024</a>
+                                <a href="#">@lang('homepage.news_item_4')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">PM addresses ET Now Global Business Summit 2024</a>
+                                <a href="#">@lang('homepage.news_item_5')</a>
                             </li>
 
                         </ul>
@@ -39,29 +39,28 @@
                 <!-- Information Column -->
                 <div class="w-full lg:w-1/3 px-2">
                     <div class="bg-gray-100 p-4 border">
-                        <h2 class="font-bold text-lg mb-2 bg-gray-200 p-4">Information</h2>
+                        <h2 class="font-bold text-lg mb-2 bg-gray-200 p-4">@lang('homepage.information_title')</h2>
                         <ul class="space-y-1 text-xs md:text-sm flex flex-col gap-2">
                             <!-- List items -->
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">Railway Protection Force is set to host the 67th All India...</a>
+                                <a href="#">@lang('homepage.news_item_1')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">DPIIT holds consultation with representatives of Indian Cement...</a>
+                                <a href="#">@lang('homepage.news_item_2')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">Capacity Building Maldivian Civil Servants: The NCGG achieves...</a>
+                                <a href="#">@lang('homepage.news_item_3')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">Text of PM’s address at ET Now Global Business Summit 2024</a>
+                                <a href="#">@lang('homepage.news_item_4')</a>
                             </li>
                             <li class="text-grey-600 hover:text-blue-700 transition duration-300 ease-in-out">
-                                <a href="#">PM addresses ET Now Global Business Summit 2024</a>
+                                <a href="#">@lang('homepage.news_item_5')</a>
                             </li>
 
                         </ul>
                         <a href="#"
-                            class="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mt-4">more
-                            news..</a>
+                            class="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mt-4">@lang('homepage.more_news')</a>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/3 px-2">
@@ -70,10 +69,9 @@
                             <img src="{{ asset('assets/dgp_rashmi_shukla.jpg') }}" alt="dgp"
                                 class="w-full object-center">
                         </div>
-                        <p class="text-center">" We will serve and protect all, particularly the downtrodden, the weak, women, children,
-                            minorities, senior citizen’s, slums dwellers, the poor & other marginalized sections of society.
-                            We will give prompt & compassionate response to every call of citizen in distress."
-                            <br><b>dgp_rashmi_shukla</b></p>
+                        <p class="text-center">@lang('homepage.quote_by_dgp')
+                            <br><b>@lang('homepage.dgp_name')</b>
+                        </p>
                     </div>
                 </div>
             </div>

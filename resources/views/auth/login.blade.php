@@ -1,54 +1,50 @@
 @extends('layouts.frontend')
+
 @section('frontend')
-    <div class="my-10 p-10 w-1/3 flex flex-col items-center justify-center container mx-auto bg-white  ">
-        <div class="p-4 text-center">
-            <h2 class="text-5xl font-bold text-blue-500">Login Form</h2>
-            <p class="text-lg mt-2 text-gray-400">Login to continue further</p>
-        </div>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+    <div class="">
+        <x-frontend.header :title="__('login.login_form')" :subtitle="__('login.login_to_continue')" />
 
-        <x-validation-errors class="mb-4" />
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+        <x-authentication-card>
+            <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('login') }}" class="w-full flex flex-col items-center justify-center">
-            @csrf
+            @if (session('status'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    {{ session('status') }}
+                </div>
+            @endif
 
-            <div class="w-3/4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
+            <form method="POST" action="{{ route('login') }}" class="bg-white rounded-lg p-4 w-full flex flex-col md:items-center justify-center">
+                @csrf
 
-            <div class="mt-4 w-3/4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+                <div class="w-full md:w-3/4">
+                    <x-label for="email" :value="__('login.email')" />
+                    <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+                <div class="mt-4 w-full md:w-3/4">
+                    <x-label for="password" :value="__('login.password')" />
+                    <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                </div>
 
-            <div class="flex items-center justify-center mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+                <div class="block mt-4">
+                    <label for="remember_me" class="flex items-center">
+                        <x-checkbox id="remember_me" name="remember" />
+                        <span class="ms-2 text-sm text-gray-600">@lang('login.remember_me')</span>
+                    </label>
+                </div>
 
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-@endsection
+                <div class="flex flex-col items-center justify-center mt-4">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white w-full md:w-fit px-4 py-2 rounded-lg text-center">
+                        @lang('login.log_in')
+                    </button>
+
+                    @if (Route::has('password.request'))
+                        <a class="underline text-xs mt-4 text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                            @lang('login.forgot_your_password')
+                        </a>
+                    @endif
+                </div>
+            </form>
+        </x-authentication-card>
+    @endsection
