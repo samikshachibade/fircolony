@@ -11,14 +11,14 @@
                         </x-responsive-nav-link>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" class="bg-gray-300 text-gray-500 text-sm  px-2 py-1">@lang('nav.login')</a>
+                    <a href="{{ route('login') }}" class="bg-gray-300 text-gray-500 text-sm  px-2 py-1">{{__('nav.login')}}</a>
 
                     <a href="/register" class="bg-gray-300 text-gray-500 text-sm  px-2 py-1">@lang('nav.register')</a>
                 @endauth
             @endif
-            <a href="{{ route('changeLanguage', 'en') }}" class="bg-blue-200 text-gray-600 text-sm  px-2 py-1">English</a>
-            <a href="{{ route('changeLanguage', 'hi') }}" class="bg-blue-200 text-gray-600 text-sm  px-2 py-1">Hindi</a>
-            <a href="{{ route('changeLanguage', 'ma') }}" class="bg-blue-200 text-gray-600 text-sm  px-2 py-1">Marathi</a>
+            @foreach (config('localization.locales') as $locale)
+            <a href="{{ route('localization',$locale) }}" class="bg-blue-200 text-gray-600 text-sm  px-2 py-1">{{ __($locale)}}</a>
+            @endforeach
         </div>
     </div>
     <div class="container mx-auto p-4 flex flex-col lg:flex-row items-center gap-4 justify-between">
@@ -50,7 +50,7 @@
                 <p class="font-bold text-white">@lang('nav.college_project_portal')</p>
             </div>
 
-            <form action="{{ route('search.receipt') }}" method="GET" class="w-full p-4 lg:w-1/2">
+            <form action="/search" method="GET" class="w-full p-4 lg:w-1/2">
                 <label for="default-search" class="mb-2 text-sm font-medium  sr-only ">search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -71,7 +71,7 @@
             <div class="w-full lg:w-1/2 flex items-center justify-around pb-2 lg:justify-center lg:gap-20">
                 <a href="/fir"
                     class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.file_fir')</a>
-                <a href="{{ route('find-police-station') }}"
+                <a href="/find-police-station"
                     class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.police')</a>
                 <a href="/court"
                     class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.court')</a>
