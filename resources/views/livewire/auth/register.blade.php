@@ -1,70 +1,158 @@
 <form wire:submit.prevent="register" class="w-full grid grid-cols-4 items-center justify-center gap-5 mt-6">
     <div class="w-full">
         <label for="name" class="block text-sm font-medium text-gray-700">@lang('registration.your_name')</label>
-        <input type="text" wire:model.lazy="name" id="name" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Your Full Name">
-        <p class="text-xs text-red-500">@error('name') {{ $message }} @enderror</p>
+        <input type="text" wire:model.lazy="name" id="name"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Your Full Name">
+        <p class="text-xs text-red-500">
+            @error('name')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="mother_name" class="block text-sm font-medium text-gray-700">@lang('registration.mothers_name')</label>
-        <input type="text" wire:model.lazy="mother_name" id="mother_name" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Mother's Name">
-        <p class="text-xs text-red-500">@error('mother_name') {{ $message }} @enderror</p>
+        <input type="text" wire:model.lazy="mother_name" id="mother_name"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Mother's Name">
+        <p class="text-xs text-red-500">
+            @error('mother_name')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="father_name" class="block text-sm font-medium text-gray-700">@lang('registration.fathers_name')</label>
-        <input type="text" wire:model.lazy="father_name" id="father_name" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Father's Name">
-        <p class="text-xs text-red-500">@error('father_name') {{ $message }} @enderror</p>
+        <input type="text" wire:model.lazy="father_name" id="father_name"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Father's Name">
+        <p class="text-xs text-red-500">
+            @error('father_name')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="surname" class="block text-sm font-medium text-gray-700">@lang('registration.surname')</label>
-        <input type="text" wire:model.lazy="surname" id="surname" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Surname">
-        <p class="text-xs text-red-500">@error('surname') {{ $message }} @enderror</p>
+        <input type="text" wire:model.lazy="surname" id="surname"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Surname">
+        <p class="text-xs text-red-500">
+            @error('surname')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="address" class="block text-sm font-medium text-gray-700">@lang('registration.address')</label>
-        <input type="text" wire:model.lazy="address" id="address" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Address">
-        <p class="text-xs text-red-500">@error('address') {{ $message }} @enderror</p>
+        <input type="text" wire:model.lazy="address" id="address"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Address">
+        <p class="text-xs text-red-500">
+            @error('address')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="aadhaar_number" class="block text-sm font-medium text-gray-700">@lang('registration.aadhaar_number')</label>
-        <input type="text" wire:model.lazy="aadhaar_number" id="aadhaar_number" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Aadhaar Number">
-        <p class="text-xs text-red-500">@error('aadhaar_number') {{ $message }} @enderror</p>
+        <input type="number" wire:model.lazy="aadhaar_number" id="aadhaar_number"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Aadhaar Number">
+        <p class="text-xs text-red-500">
+            @error('aadhaar_number')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="pancard_number" class="block text-sm font-medium text-gray-700">@lang('registration.pancard_number')</label>
-        <input type="text" wire:model.lazy="pancard_number" id="pancard_number" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="PAN Card Number">
-        <p class="text-xs text-red-500">@error('pancard_number') {{ $message }} @enderror</p>
+        <input type="text" wire:model.lazy="pancard_number" id="pancard_number"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="PAN Card Number">
+        <p class="text-xs text-red-500">
+            @error('pancard_number')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
-        <label for="state" class="block text-sm font-medium text-gray-700">@lang('registration.state')</label>
-        <input type="text" wire:model.lazy="state" id="state" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="State">
-        <p class="text-xs text-red-500">@error('state') {{ $message }} @enderror</p>
+        <label for="state" class="block text-sm font-medium text-gray-700">State</label>
+        <select id="state" wire:model="state" wire:change="updateCities"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full">
+            <option value="">Select State</option>
+            @foreach ($statesAndDistricts as $stateData)
+                <option value="{{ $stateData['state'] }}">{{ $stateData['state'] }}</option>
+            @endforeach
+        </select>
+        <p class="text-xs text-red-500">
+            @error('state')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
+
     <div class="w-full">
-        <label for="city" class="block text-sm font-medium text-gray-700">@lang('registration.city')</label>
-        <input type="text" wire:model.lazy="city" id="city" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="City">
-        <p class="text-xs text-red-500">@error('city') {{ $message }} @enderror</p>
+        <label for="city" class="block text-sm font-medium text-gray-700">District</label>
+        <select id="city" wire:model="city"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full">
+            <option value="">Select District</option>
+            @foreach ($cities as $district)
+                <option value="{{ $district }}">{{ $district }}</option>
+            @endforeach
+        </select>
+        <p class="text-xs text-red-500">
+            @error('city')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
+
+
+
     <div class="w-full">
         <label for="mobile_number" class="block text-sm font-medium text-gray-700">@lang('registration.mobile_number')</label>
-        <input type="text" wire:model.lazy="mobile_number" id="mobile_number" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Mobile Number">
-        <p class="text-xs text-red-500">@error('mobile_number') {{ $message }} @enderror</p>
+        <input type="number" wire:model.lazy="mobile_number" id="mobile_number"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Mobile Number">
+        <p class="text-xs text-red-500">
+            @error('mobile_number')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="email" class="block text-sm font-medium text-gray-700">@lang('registration.email')</label>
-        <input type="email" wire:model.lazy="email" id="email" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Email">
-        <p class="text-xs text-red-500">@error('email') {{ $message }} @enderror</p>
+        <input type="email" wire:model.lazy="email" id="email"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Email">
+        <p class="text-xs text-red-500">
+            @error('email')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="password" class="block text-sm font-medium text-gray-700">@lang('registration.password')</label>
-        <input type="password" wire:model.lazy="password" id="password" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Password">
-        <p class="text-xs text-red-500">@error('password') {{ $message }} @enderror</p>
+        <input type="password" wire:model.lazy="password" id="password"
+            class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full"
+            placeholder="Password">
+        <p class="text-xs text-red-500">
+            @error('password')
+                {{ __('Password must 8 charcter long and contain atleast 1-uppercase, 1-lowercase, 1-special Character and 1-number') }}
+            @enderror
+        </p>
     </div>
     <div class="w-full">
         <label for="terms" class="flex items-center">
             <x-input id="terms" type="checkbox" wire:model="terms" class="mr-2" />
             <span class="text-sm text-gray-600">@lang('registration.terms_conditions')</span>
         </label>
-        <p class="text-xs text-red-500">@error('terms') {{ $message }} @enderror</p>
+        <p class="text-xs text-red-500">
+            @error('terms')
+                {{ $message }}
+            @enderror
+        </p>
     </div>
     <x-button type="submit" class="px-6 py-2 w-fit text-white bg-green-500 font-semibold text-lg"
         wire:loading.attr="disabled">

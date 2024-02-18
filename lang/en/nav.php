@@ -14,5 +14,5 @@ return [
     'file_fir' => 'File FIR',
     'police' => 'Police',
     'court' => 'Court',
-    'college_project_portal' => 'College Project Portal',
+    'college_project_portal' => 'Crime Justice',
 ];

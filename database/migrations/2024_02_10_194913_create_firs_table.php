@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('complainant_name');
-            $table->string('identity_proof')->nullable();
+            $table->text('identity_proof')->nullable();
             $table->string('contact_number');
             $table->date('incident_date');
             $table->string('accused_name')->nullable();

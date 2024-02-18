@@ -14,5 +14,5 @@ return [
     'file_fir' => 'FIR नोंदवा',
     'police' => 'पोलीस',
     'court' => 'न्यायालय',
-    'college_project_portal' => 'कॉलेज प्रोजेक्ट पोर्टल',
+    'college_project_portal' => 'गुन्हा न्याय',
 ];

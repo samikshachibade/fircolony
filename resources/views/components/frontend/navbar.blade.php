@@ -3,7 +3,9 @@
         <div class="container mx-auto flex items-center justify-end gap-3">
             @if (Route::has('login'))
                 @auth
+                @if (auth()->check() && auth()->user()->email_verified_at)
                     <a href="{{ url('/profile') }}" class="bg-gray-300 text-gray-500 text-sm  px-2 py-1">@lang('nav.profile')</a>
+                    @endif
                     <form method="POST" action="{{ route('logout') }}" x-data>
                         @csrf
                         <x-responsive-nav-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
@@ -34,7 +36,7 @@
             class="uppercase grid grid-cols-2 lg:grid-cols-4 text-xs md:text-sm text-gray-500 font-semibold gap-2 lg:gap-10">
             <a href="{{ route('find.new.laws') }}"
                 class="bg-gray-200 rounded-full text-center px-4 py-1 hover:scale-105">@lang('nav.find_new_law')</a>
-            <a href="/"
+            <a href="{{ route('find.existing.laws') }}"
                 class="bg-gray-200 rounded-full text-center px-4 py-1 hover:scale-105">@lang('nav.find_existing_law')</a>
             <a href="https://www.mygov.in/"
                 class="bg-gray-200 rounded-full text-center px-4 py-1 hover:scale-105">@lang('nav.my_government')</a>
@@ -69,9 +71,17 @@
             </form>
 
             <div class="w-full lg:w-1/2 flex items-center justify-around pb-2 lg:justify-center lg:gap-20">
-                <a href="/fir"
-                    class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.file_fir')</a>
-                <a href="/find-police-station"
+                @if (!auth()->check())
+                <a href="/fir" class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.file_fir')</a>
+            @elseif (auth()->user()->email_verified_at)
+                @if (!auth()->user()->admin)
+                    <a href="/fir" class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.file_fir')</a>
+                @endif
+            @else
+                <a href="{{ route('verification.notice') }}" class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('Verify Email')</a>
+            @endif
+
+                    <a href="/find-police-station"
                     class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.police')</a>
                 <a href="/court"
                     class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.court')</a>

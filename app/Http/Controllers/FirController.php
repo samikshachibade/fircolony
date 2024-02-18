@@ -15,5 +15,10 @@ class FirController extends Controller
         // Redirect to a specific view with the FIR data
         return view('frontend.fir-search', compact('fir'));
     }
+    public function show($id)
+    {
+        $fir = Fir::where('receipt', $id)->first();
+        return view('frontend.fir-search', compact('fir'));
+    }
 
 }

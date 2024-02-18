@@ -69,15 +69,15 @@ class PaymentPage extends Component
     {
         $paymentDetails =$data;
         $orderDetails = session('orderDetails');
+        $filesString = implode(',', $this->firData['identity_proof']);
         session()->forget('orderDetails');
-
         Fir::create([
             'user_id'=>$this->firData['user_id'],
             'complainant_name' => $this->firData['complainant_name'],
             'contact_number' => $this->firData['contact_number'],
             'incident_date' =>$this->firData['incident_date'],
             'accused_name' => $this->firData['accused_name'],
-            'identity_proof'=>$this->firData['identity_proof'],
+            'identity_proof'=>$filesString,
             'incident_location' => $this->firData['incident_location'],
             'incident_description' => $this->firData['incident_description'],
             'payment_id' => $paymentDetails['razorpay_payment_id'],

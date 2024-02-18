@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Fir;
 use Livewire\Component;
+use App\Notifications\FirStatusUpdatedNotification;
 
 class FirsTable extends Component
 {
@@ -30,6 +31,8 @@ class FirsTable extends Component
 
         if ($fir) {
             $fir->update(['current_status' => $statusProperty]);
+
+        $fir->user->notify(new FirStatusUpdatedNotification($fir));
            $this->dispatch('showPopup');
         }
 

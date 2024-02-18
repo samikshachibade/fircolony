@@ -13,15 +13,59 @@
             </div>
 
             <div class="w-full">
-                <label for="identity_proof" class="text-sm font-bold text-gray-600 block">@lang('fir.identity_proof')</label>
-                <input type="file" id="identity_proof" name="identity_proof" wire:model.lazy="identity_proof"
+                <label for="identity_proofs" class="block text-sm font-medium text-gray-700">Identity Proof</label>
+                <input type="file" id="identity_proofs" wire:model="identity_proofs"
                     class="w-full p-2 border border-gray-300 rounded mt-1" />
-                <p class="text-red-500 text-xs">
-                    @error('identity_proof')
-                        {{ $message }}
-                    @enderror
-                </p>
+
+                <!-- Conditional UI for file selection and preparation state -->
+                @if ($identity_proofs)
+                    <div wire:loading.remove wire:target="uploadIdentityProof">
+                        <button type="button" wire:click="uploadIdentityProof" wire:loading.attr="disabled"
+                            class="mt-2 inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:ring focus:ring-blue-300 disabled:opacity-25 transition">
+                            Upload
+                        </button>
+                    </div>
+                @endif
+
+                <!-- Preparing file for upload state -->
+                <div wire:loading wire:target="identity_proofs" class="flex  items-center mt-2">
+                    <div>
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                    </div>
+                    <p class="text-gray-600">Preparing file for upload...</p>
+                </div>
+
+                <!-- Uploading file state -->
+                <div wire:loading wire:target="uploadIdentityProof" class="flex items-center mt-2">
+                    <div>
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                    </div>
+                    <p class="text-blue-600">Uploading...</p>
+                </div>
+
+                @error('identity_proofs')
+                <span x-data="{ show: true }" x-init="setTimeout(() => show = false, 2000)" x-show="show" class="text-red-500 text-sm">{{ $message }}. Try another proof</span>
+            @enderror
+
+
+
             </div>
+
+
             <div class="w-full">
                 <label for="contact_number" class="text-sm font-bold text-gray-600 block">@lang('fir.contact_number')</label>
                 <input type="number" id="contact_number" name="contact_number" wire:model="contact_number"
@@ -92,6 +136,17 @@
                 @enderror
             </p>
         </div>
+        @if ($uploadedFiles)
+            <div class="mt-4 border mb-4">
+                <p class="text-lg font-medium mb-2 bg-gray-100 px-4 py-2">Files uploaded are</p>
+                <div class="flex flex-col gap-1">
+                    @foreach ($uploadedFiles as $file)
+                        <p class="text-sm text-gray-600 py-3 px-4 odd:bg-white  even:bg-gray-100">{{ basename($file) }}</p>
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
 
         <div class="flex items-center justify-between">
             <button type="submit"
@@ -100,10 +155,10 @@
         <span wire:loading wire:target="submitFir">
             <div class="fixed top-0 left-0 w-full min-h-screen bg-gray-400/25 flex items-center justify-center">
                 <svg class="svgcontainer" viewBox="0 0 40 40" height="40" width="40">
-                    <circle class="track" cx="20" cy="20" r="17.5" pathlength="100" stroke-width="5px"
-                        fill="none" />
-                    <circle class="car" cx="20" cy="20" r="17.5" pathlength="100" stroke-width="5px"
-                        fill="none" />
+                    <circle class="track" cx="20" cy="20" r="17.5" pathlength="100"
+                        stroke-width="5px" fill="none" />
+                    <circle class="car" cx="20" cy="20" r="17.5" pathlength="100"
+                        stroke-width="5px" fill="none" />
                 </svg>
             </div>
 
