@@ -45,7 +45,7 @@
 
     <nav class="w-full bg-blue-500">
         <div class="container mx-auto flex flex-col lg:flex-row lg:items-center justify-around lg:gap-20">
-            <div class="flex items-center">
+            <div class="flex items-center gap-4">
                 <a href=".">
                     <img src="{{ asset('assets/logo.png') }}" alt="logo" class="w-20">
                 </a>
@@ -81,10 +81,9 @@
                 <a href="{{ route('verification.notice') }}" class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('Verify Email')</a>
             @endif
 
-                    <a href="/find-police-station"
-                    class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.police')</a>
-                <a href="/court"
-                    class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.court')</a>
+                    <a href="{{ route('faq') }}"
+                    class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.faq')</a>
+                
             </div>
 
         </div>

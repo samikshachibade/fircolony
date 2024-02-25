@@ -12,7 +12,7 @@ return [
     'search_law_query' => 'कायद्याची चौकशी शोधा...',
     'search' => 'शोधा',
     'file_fir' => 'FIR नोंदवा',
-    'police' => 'पोलीस',
-    'court' => 'न्यायालय',
+    'faq' => ' वारंवार विचारले जाणारे प्रश्न',
+    'contact' => 'संपर्क',
     'college_project_portal' => 'गुन्हा न्याय',
 ];

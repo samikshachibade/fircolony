@@ -144,7 +144,7 @@ class LawsController extends Controller
             $laws = $englishLaws; // Default to English if the locale is not supported
         }
 
-        return view('frontend.law', compact('laws'));
+        return view('frontend.find-new-law', compact('laws'));
     }
 
 }

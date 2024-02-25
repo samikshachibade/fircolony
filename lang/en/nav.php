@@ -12,7 +12,7 @@ return [
     'search_law_query' => 'Search law query...',
     'search' => 'Search',
     'file_fir' => 'File FIR',
-    'police' => 'Police',
-    'court' => 'Court',
+    'faq' => 'FAQ',
+    'contact' => 'Contact',
     'college_project_portal' => 'Crime Justice',
 ];

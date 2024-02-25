@@ -69,7 +69,7 @@ class PaymentPage extends Component
     {
         $paymentDetails =$data;
         $orderDetails = session('orderDetails');
-        $filesString = implode(',', $this->firData['identity_proof']);
+        $filesString = implode(',', json_decode($this->firData['identity_proofs'], true));
         session()->forget('orderDetails');
         Fir::create([
             'user_id'=>$this->firData['user_id'],

@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FirController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LawsController;
+use App\Http\Controllers\FindingExistingLawController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PoliceStationController;
 use App\Http\Middleware\Localization;
@@ -71,9 +72,10 @@ Route::middleware(Localization::class)->group(function(){
     });
 
     Route::get('/find-new-laws', [LawsController::class, 'index'])->name('find.new.laws');
-    Route::get('/find-existing-laws',function(){
-        return view('frontend.find-existing-law');
-    })->name('find.existing.laws');
+    Route::get('/find-existing-laws', [FindingExistingLawController::class, 'index'])->name('find.existing.laws');
+    Route::get('/faq',function(){
+        return view('frontend.faq');
+    })->name('faq');
     Route::get('/firs/{id}', [FirController::class, 'show'])->name('fir.show');
     Route::get('/search', [FirController::class, 'searchByReceipt'])->name('search.receipt');
 
