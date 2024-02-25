@@ -70,7 +70,7 @@ class FirData extends Component
 
 
         if ($this->uploadedFiles) {
-            $validatedData['identity_proofs'] = json_encode($this->uploadedFiles);
+            $validatedData['identity_proofs'] =$this->uploadedFiles;
             session(['firData' => $validatedData]);
             $this->dispatch('showPopup');
             return redirect('/payment');
