@@ -13,9 +13,10 @@ class UsersTable extends Component
     public $sortAsc = true; // Sorting direction
     public function render()
     {
-        $users = User::search($this->search)
-            ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
-            ->paginate(10);
+        $users = User::where('admin', '<>', 1) // Exclude users where admin is 1
+        ->search($this->search)
+        ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+        ->paginate(10);
 
         return view('livewire.users-table', [
             'users' => $users

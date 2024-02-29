@@ -20,7 +20,6 @@ class PaymentPage extends Component
             return redirect(route('login'));
         }
         $this->firData = session('firData', null);
-
         if (empty($this->firData)) {
             session()->flash('error', 'No FIR data found. Please submit your FIR again.');
             return redirect('/');
@@ -69,7 +68,7 @@ class PaymentPage extends Component
     {
         $paymentDetails =$data;
         $orderDetails = session('orderDetails');
-        $filesString = implode(',', json_decode($this->firData['identity_proofs'], true));
+        $filesString =implode(',', $this->firData['identity_proofs']);
         session()->forget('orderDetails');
         Fir::create([
             'user_id'=>$this->firData['user_id'],

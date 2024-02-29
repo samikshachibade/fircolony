@@ -81,8 +81,13 @@
                 <a href="{{ route('verification.notice') }}" class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('Verify Email')</a>
             @endif
 
-                    <a href="{{ route('faq') }}"
-                    class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.faq')</a>
+            <a href="https://www.mahapolice.gov.in/"
+            class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.police')</a>
+            
+            <a href="https://districts.ecourts.gov.in/"
+            class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.court')</a>
+            <a href="{{ route('faq') }}"
+            class="font-semibold text-gray-600 dark:text-gray-100 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">@lang('nav.faq')</a>
                 
             </div>
 

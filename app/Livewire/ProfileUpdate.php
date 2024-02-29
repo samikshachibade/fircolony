@@ -8,7 +8,7 @@ use App\Models\User;
 
 class ProfileUpdate extends Component
 {
-    public $name, $email, $password, $mother_name, $father_name, $surname, $address, $aadhaar_number, $pancard_number, $mobile_number, $state, $city;
+    public $name, $email, $mother_name, $father_name, $surname, $address, $aadhaar_number, $pancard_number, $mobile_number, $state, $city;
 
     public function mount()
     {

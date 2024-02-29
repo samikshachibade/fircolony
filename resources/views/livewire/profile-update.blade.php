@@ -55,11 +55,6 @@
         <p class="text-xs text-red-500">@error('email') {{ $message }} @enderror</p>
     </div>
     <div class="w-full">
-        <label for="password" class="block text-sm font-medium text-gray-700">@lang('registration.password')</label>
-        <input type="password" wire:model.lazy="password" id="password" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full" placeholder="Password">
-        <p class="text-xs text-red-500">@error('password') {{ $message }} @enderror</p>
-    </div>
-    <div class="w-full">
         <label for="terms" class="flex items-center">
             <x-input id="terms" type="checkbox" wire:model="terms" class="mr-2" />
             <span class="text-sm text-gray-600">@lang('registration.terms_conditions')</span>

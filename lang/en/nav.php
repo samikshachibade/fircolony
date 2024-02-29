@@ -13,6 +13,8 @@ return [
     'search' => 'Search',
     'file_fir' => 'File FIR',
     'faq' => 'FAQ',
+    'police' => 'Police',
+    'court' => 'Court',
     'contact' => 'Contact',
     'college_project_portal' => 'Crime Justice',
 ];

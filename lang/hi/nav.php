@@ -13,6 +13,8 @@ return [
     'search' => 'खोजें',
     'file_fir' => 'FIR दर्ज करें',
     'faq' => 'सामान्य प्रश्न',
+    'police' => 'पुलिस',
+    'court' => 'न्यायालय',
     'contact' => 'संपर्क',
     'college_project_portal' => 'अपराध न्याय',
 ];

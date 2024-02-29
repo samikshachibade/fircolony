@@ -14,5 +14,7 @@ return [
     'file_fir' => 'FIR नोंदवा',
     'faq' => ' वारंवार विचारले जाणारे प्रश्न',
     'contact' => 'संपर्क',
+    'police' => 'पोलीस',
+    'court' => 'न्यायालय',
     'college_project_portal' => 'गुन्हा न्याय',
 ];

@@ -27,7 +27,7 @@
                     <td class="py-4 px-6">
                         {{-- <a href="{{ Storage::url($fir->identity_proof) }}" target="_blank"
                             class="text-blue-500 hover:underline">View Document</a> --}}
-                            <button onclick="openFilesPopup('{{ json_encode($filePaths) }}')">View Documents</button>
+                            <button onclick="openFilesPopup('{{ json_encode($filePaths) }}')" class="bg-blue-500 px-3 py-1 text-white">View Documents</button>
                     </td>
 
                     <td class="py-4 px-6">{{ $fir->contact_number }}</td>
@@ -60,10 +60,10 @@
     <div>
         {{ $firs->links() }}
     </div>
-    <div id="filesPopup" style="display:none">
-        <div id="fileLinksList">
+    <div id="filesPopup" style="display:none" class="p-2 bg-white shadow-md">
+        <div id="fileLinksList" class="flex flex-col gap-4 mt-4" >
         </div>
-        <button type="button" onclick="disabledDiv()" class="px-4 py-2 mt-4">close div</button>
+        <button type="button" onclick="disabledDiv()" class="px-4 py-2 mt-4 bg-black text-white">close div</button>
     </div>
 </div>
 <script>
@@ -82,6 +82,10 @@
         link.textContent = fileName; // Display the file name as the link text
 
         link.target = '_blank';
+        link.style.marginTop = '15px';
+        link.style.backgroundColor = '#f0f0f0';
+link.style.paddingBottom = '5px';
+link.style.padding = '9px';
         listItem.appendChild(link);
         listElement.appendChild(listItem);
     });
