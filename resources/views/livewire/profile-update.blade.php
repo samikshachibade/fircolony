@@ -55,7 +55,7 @@
         <p class="text-xs text-red-500">@error('email') {{ $message }} @enderror</p>
     </div>
     <div class="w-full">
-        <label for="terms" class="flex items-center">
+        <label for="terms" class="flex items-center ">
             <x-input id="terms" type="checkbox" wire:model="terms" class="mr-2" />
             <span class="text-sm text-gray-600">@lang('registration.terms_conditions')</span>
         </label>
